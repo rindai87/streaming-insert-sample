@@ -50,7 +50,7 @@ $ gcloud beta pubsub topics create [PUBSUB_TOPIC_NAME]
 ### GAEでpushサブスクリプション用のエンドポイントを作成
 ```
 # Replace env_vars to your own env name in app.yaml
-$ cd ()
+$ cd streaming-insert-sample
 $ source env/bin/activate
 $ dev_appserver.py app.yaml
 $ gcloud app deploy app.yaml
