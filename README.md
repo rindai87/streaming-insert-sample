@@ -20,12 +20,12 @@ Cloud Pub/SubにpublishされたJSON形式のデータがBigQueryへストリー
   - [認証などのセットアップ](https://cloud.google.com/sdk/docs/initializing?hl=ja)を行う
 - リポジトリのクローン
 ```
-$ git clone ()
+$ git clone git@github.com:rindai87/streaming-insert-sample.git
 ```
 - Virtualenvによる環境の構築
 ```
 $ pip install virtualenv
-$ cd ()
+$ cd streaming-insert-sample
 $ virtualenv env
 $ source env/bin/activate
 $ pip install -t lib -r requirements.txt
