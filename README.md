@@ -56,6 +56,19 @@ $ dev_appserver.py app.yaml
 $ gcloud app deploy app.yaml
 ```
 
+### Pub/SubのPushサブスクリプションの登録
+```
+# サブスクライバーの登録
+$ gcloud beta pubsub subscriptions create push-subscriber \
+    --topic [topic_name] \
+    --push-endpoint \
+        https://[your_project_id].appspot.com/pubsub/push?token=[token] \
+    --ack-deadline 30
+
+# --topicには、トピック名を指定
+# --push-endpointには、立ち上げたGAEのエンドポイントのURLとPUBSUB_VERIFICATION_TOKENとして設定したtokenを指定
+```
+
 ## セットアップの確認
 - Cloud Pub/Subに対してJSONをpublishする
   - ローカルPCのロードアベレージをpublishするスクリプトとして`script/generate_json.py`を用意している

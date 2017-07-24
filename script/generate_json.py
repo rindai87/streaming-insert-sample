@@ -11,9 +11,10 @@ dt_str = dt.strftime("%Y-%m-%d %H:%M:%S")
 uptime = subprocess.check_output('uptime').decode('utf-8')
 results = uptime.split(' ')
 
-feed_json = {"datetime": dt_str, 
-             "load1": float(results[10]),
-             "load15": float(results[12].strip())}
+# パースが失敗したら適宜インデックスを変更してください
+feed_json = {"datetime": dt_str,
+             "cpu_temperature": float(results[10]),
+             "temperature": float(results[12].strip())}
 
 print(json.dumps(feed_json))
 
